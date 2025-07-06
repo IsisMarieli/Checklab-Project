@@ -1,3 +1,0 @@
-Connection URL 
-
-postgresql://postgres:KJqQoyXqGeVDSsQYjYpkhecbMOuuZnxU@shuttle.proxy.rlwy.net:50661/railway

@@ -1,10 +1,45 @@
 .container{
     background-color: var(--gray-ligth);
+    padding-top: 20px;
     height: 87vh;
 }
+
+.btnSair{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--blue-dark);
+    background: transparent;
+    width: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+.WrapperTitle{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title{
+    color: var(--blue-dark);
+    font-size: 1.8rem;
+    font-weight: normal;
+}
+
+.cardWrapper {
+   display: grid;
+  gap: 50px 100px;
+  margin-top: 30px; 
+}
+
 
 @media (max-width: 768px) {
     .container{
         height: 100vh;
+    }
+
+    .title{
+        font-size: 1rem;
     }
 }

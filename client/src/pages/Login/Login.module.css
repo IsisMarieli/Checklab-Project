@@ -51,7 +51,7 @@ input::placeholder {
     color: var(--blue-dark);
 }
 
-button {
+.btnEntrar {
     border: none;
     margin-top: 7px;
     width: 190px;
@@ -63,12 +63,12 @@ button {
     transition: all 0.3s ease-in;
 }
 
-button:hover {
+.btnEntrar:hover {
     background: var(--blue-dark);
 }
 
 input,
-button {
+.btnEntrar {
     transition: all 0.3s ease-in;
 }
 
@@ -86,7 +86,7 @@ button {
     }
 
     input,
-    button {
+    .btnEntrar {
         width: 150px;
     }
 }

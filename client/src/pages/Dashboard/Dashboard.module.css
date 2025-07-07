@@ -1,0 +1,10 @@
+.container{
+    background-color: var(--gray-ligth);
+    height: 87vh;
+}
+
+@media (max-width: 768px) {
+    .container{
+        height: 100vh;
+    }
+}

@@ -1,41 +1,92 @@
-body{
+/* body {
+    background-color: var(--gray-ligth);
     height: 100vh;
-}
+} */
 
-p{
+p {
     display: flex;
     justify-content: center;
     font-size: 1.25rem;
     margin-bottom: 10px;
+    color: var(--blue-dark);
 }
 
-.containerHeader{
+.container {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
 }
 
-.LogoEmbarque{
+.LogoEmbarque {
     margin-top: 45px;
     width: 156px;
 }
 
-.containerMain{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.LogoPorto{
+.LogoPorto {
     margin-top: 112px;
     width: 316px;
 }
 
-input{
-    width: 190px;
+.LogoEmbarque,
+.LogoPorto {
+    transition: all 0.3s ease-in;
 }
 
-button{
+input {
+    width: 190px;
+    height: 27px;
+    border-radius: 2px;
+    border: 0.5px solid var(--blue-dark);
+    color: var(--blue-dark);
+    padding: 7px;
+}
+
+input:focus {
+    outline: 2px solid var(--blue-light);
+    border: none;
+}
+
+input::placeholder {
+    color: var(--blue-dark);
+}
+
+button {
     border: none;
     margin-top: 7px;
     width: 190px;
+    height: 27px;
+    background: var(--blue-light);
+    color: var(--white);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+button:hover {
+    background: var(--blue-dark);
+}
+
+input,
+button {
+    transition: all 0.3s ease-in;
+}
+
+@media (max-width: 768px) {
+    .LogoEmbarque {
+        width: 130px;
+    }
+
+    .LogoPorto {
+        width: 200px;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    input,
+    button {
+        width: 150px;
+    }
 }

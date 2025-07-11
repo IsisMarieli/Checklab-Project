@@ -10,6 +10,9 @@
 :root {
   --blue-light:#1450EF; 
   --blue-dark: #0E004B;
+  --blue-transparent:#E8FBF3;
+  --purple-transparent:#EDD9FE;
+  --orange-transparent:#FFE6C1;
   
   --black: #000000;
   --gray-ligth: #F6F6F6;

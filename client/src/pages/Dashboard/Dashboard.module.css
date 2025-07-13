@@ -17,16 +17,6 @@
     flex-direction: row;       
 }
 
-.CapBot{
-    position: fixed;
-    display: flex;
-    bottom: 20px; 
-    right: 20px; 
-    background: transparent;
-    border: none;
-    cursor: pointer; 
-}
-
 .btnLogout { 
     display: flex;
     justify-content: center; 

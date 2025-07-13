@@ -1,9 +1,9 @@
-import Header from '../../components/Header/Header/Header';
-import Cards from '../../components/Header/cards/cards';
+import Header from '../../components/Header/Header';
+import Cards from '../../components/Cards/cards';
 import styles from './Dashboard.module.css';
-import { useNavigate } from 'react-router-dom';
 import LogoutIcon from '../../assets/Sair.svg';
-import CapBot from '../../assets/CapBot.svg';
+import CapBot from '../../components/CapBot/CapBot';
+import { useNavigate } from 'react-router-dom';
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ function Dashboard() {
   return (
     <div>
       <div className={styles.Header}>
-        <Header />
+        <Header/>
       </div>
       <main className={styles.container}>
         <button onClick={handleLogout} className={styles.btnLogout}>
@@ -23,11 +23,7 @@ function Dashboard() {
         </button>
         <div className={styles.rowBot}>
           <Cards />
-          <img
-            className={styles.CapBot}
-            src={CapBot}
-            alt="CapBot assistente virtual"
-            />
+          <CapBot/>
         </div>
       </main>
     </div>

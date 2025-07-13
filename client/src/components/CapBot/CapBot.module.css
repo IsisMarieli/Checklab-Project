@@ -1,0 +1,16 @@
+.CapBot-popup{
+    width: 420px;
+    overflow: hidden;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 0 128px 0 var(--gray),
+    0 32px 64px -45px var(--gray),;
+}
+
+.CapBot-popup .chat-header{
+    display: flex;
+    padding: 15px 22px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--gray-soft);
+}

@@ -21,17 +21,17 @@ function CapBot() {
 
                 {/* ChatBot Body */}
                 <div className={styles["chat-body"]}>
-                    <div className={styles["mensage bot-message"]}>
+                    <div className={styles["mensage-bot-message"]}>
                         <img
-                            className={styles.CapBot}
+                            className={styles["CapBot-chat"]}
                             src={capBot}
                             alt="CapBot assistente virtual"
                         />
                         <p className={styles["message-text"]}>
-                            Olá <br /> Como posso ajudar você hoje?
+                            Olá ,<br /> Como posso ajudar você hoje?
                         </p>
                     </div>
-                    <div className={styles["mensage user-message"]}>
+                    <div className={styles["mensage-user-message"]}>
                         <p className={styles["message-text"]}>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         </p>
@@ -49,6 +49,7 @@ function CapBot() {
                 </div>
             </div>
         </div>
+
     )
 }
 

@@ -68,11 +68,11 @@
     font-weight: 300;
 }
 
-.conquest p {
+.gift p {
     white-space: wrap;
 }
 
-.buttonMore {
+.buttonGift {
     width: 193px;
     height: 30px;
     border-radius: 5px;
@@ -84,7 +84,7 @@
     cursor: pointer;
 }
 
-.buttonMore:hover {
+.buttonGift:hover {
     background: var(--blue-dark);
 }
 

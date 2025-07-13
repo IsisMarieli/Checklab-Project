@@ -1,6 +1,6 @@
 import styles from './Header.module.css';
-import LogoEmbarque from '../../assets/LOGO - EMBARQUEDIGITAL.svg';
-import LogoPorto from '../../assets/LOGO - PORTODIGITAL.svg';
+import LogoEmbarque from '../../../assets/LOGO - EMBARQUEDIGITAL.svg';
+import LogoPorto from '../../../assets/LOGO - PORTODIGITAL.svg';
 
 function Header() {
     return (

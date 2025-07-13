@@ -17,7 +17,7 @@ function Login() {
       <img className={styles.LogoPorto} src={LogoPorto} alt="Logo Porto Digital" title='Porto Digital' />
       <p>Entre no CheckLab</p>
       <input type="text" placeholder='Digite seu CPF'/>
-      <button className={styles.btnEntrar} onClick={handleLogin}>Entrar</button>
+      <button className={styles.btnLogin} onClick={handleLogin}>Entrar</button>
     </main>
   );
 }

@@ -18,13 +18,16 @@ function Dashboard() {
         <Header/>
       </div>
       <main className={styles.container}>
+        <div className={styles.WrapperInit}>
+        <h1>Bem-Vindo(a) ao CheckLab!</h1>
         <button onClick={handleLogout} className={styles.btnLogout}>
           Sair<img src={LogoutIcon} alt="Ícone de Sair" />
         </button>
-        <div className={styles.rowBot}>
-          <Cards />
-          <CapBot/>
         </div>
+        <div className={styles.cards}>
+          <Cards />
+        </div>
+          <CapBot/>
       </main>
     </div>
   );

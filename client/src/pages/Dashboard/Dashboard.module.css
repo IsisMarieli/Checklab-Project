@@ -12,9 +12,11 @@
     background: var(--gray-ligth);
 }
 
-.rowBot{
+.WrapperInit{
     display: flex;
-    flex-direction: row;       
+    align-items: center;
+    gap: 460px;
+    color: var(--blue-dark);
 }
 
 .btnLogout { 
@@ -32,4 +34,14 @@
 .btnLogout img {
     height: 30px; 
     width: auto;
+}
+
+@media (max-width: 768px) {
+    .WrapperInit{
+        gap: 80px;
+    }
+
+    .WrapperInit h1{
+        font-size: 1rem;
+    }
 }

@@ -1,5 +1,7 @@
 import styles from './CapBot.module.css'
 import capBot from '../../assets/CapBot.svg';
+import Cap from '../../assets/Cap.svg';
+import CapForm from '../capForm';
 
 
 function CapBot() {
@@ -24,11 +26,13 @@ function CapBot() {
                     <div className={styles["mensage-bot-message"]}>
                         <img
                             className={styles["CapBot-chat"]}
-                            src={capBot}
+                            src={Cap}
                             alt="CapBot assistente virtual"
                         />
                         <p className={styles["message-text"]}>
-                            Olá ,<br /> Como posso ajudar você hoje?
+                            Olá, Embarcante! 🚀 <br/>
+                            Eu me chamo CapBot, sim uma capivara assistente, 
+                            Como posso te ajudar hoje?
                         </p>
                     </div>
                     <div className={styles["mensage-user-message"]}>
@@ -39,13 +43,7 @@ function CapBot() {
                 </div>
                 {/* Chatbot Footer */}
                 <div className={styles["chat-footer"]}>
-                    <form action="#" className={styles["chat-form"]}>
-                        <input type="text" placeholder='Mensagem. . .' className={styles["mensage-input"]} required />
-                        <button className="material-symbols-rounded">
-                            arrow_upward
-                        </button>
-
-                    </form>
+                    <CapForm/>
                 </div>
             </div>
         </div>

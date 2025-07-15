@@ -5,18 +5,25 @@ import embarque from '../../assets/LOGO - EMBARQUEDIGITAL.svg';
 import CapForm from './CapForm';
 import { useEffect, useRef, useState } from 'react';
 import CapMessage from './CapMessage';
+import { companyInfo } from "../../companyInfo.js";
 
 
 function CapBot() {
-    const [capHistory, setCapHistory] = useState([]);
+    const [capHistory, setCapHistory] = useState([
+        {
+            hideInChat: true,
+            role: "model",
+            text: companyInfo
+        }
+    ]);
     const [showCapBot, setShowCapBot] = useState(false);
     const chatBodyRef = useRef();
 
     const generateBotResponse = async (history) => {
         // função para ajudar a atualizar o histórico do chat
         const updateHistory = (text) => {
-            setCapHistory(prev => [...prev.filter(msg => msg.text !== "Analisando . . ."), 
-                { role: "model", text }]);
+            setCapHistory(prev => [...prev.filter(msg => msg.text !== "Analisando . . ."),
+            { role: "model", text }]);
         }
 
         // formatar historico do chat para req da API

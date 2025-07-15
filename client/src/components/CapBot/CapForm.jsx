@@ -18,7 +18,7 @@ function CapForm({capHistory, setCapHistory, generateBotResponse}) {
     600);
 
     // chamar função para gerar a resposta do Capbot
-    generateBotResponse([...capHistory, { role: "user", text: userMessage }]);
+    generateBotResponse([...capHistory, { role: "user", text: `Usando os detalhes fornecidos acima, por favor, responda a esta consulta: ${userMessage}` }]);
   };
 
   return (

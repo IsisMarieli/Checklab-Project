@@ -1,7 +1,7 @@
 import { useRef } from 'react';
-import styles from './CapBot/CapBot.module.css';
+import styles from './CapBot.module.css';
 
-function CapForm() {
+function CapForm({capHistory, setCapHistory, generateBotResponse}) {
   const inputRef = useRef(null);
 
   const handleFormSubmit = (e) => {
@@ -10,7 +10,15 @@ function CapForm() {
     if (!userMessage) return;
     inputRef.current.value = "";
 
-    console.log(userMessage);
+    // update chat history
+    setCapHistory((history) => [...history, { role: "user", text: userMessage }]);
+    
+    // CapBot pensando...
+    setTimeout(() => setCapHistory((history) => [...history, { role: "model", text: "Analisando . . ." }]),
+    600);
+
+    // chamar função para gerar a resposta do Capbot
+    generateBotResponse([...capHistory, { role: "user", text: userMessage }]);
   };
 
   return (

@@ -1,10 +1,44 @@
 import styles from './CapBot.module.css'
 import capBot from '../../assets/CapBot.svg';
 import Cap from '../../assets/Cap.svg';
-import CapForm from '../capForm';
+import CapForm from './CapForm';
+import { useState } from 'react';
+import CapMessage from './CapMessage';
 
 
 function CapBot() {
+    const [capHistory, setCapHistory] = useState([]);
+
+    const generateBotResponse = async (history) => {
+        // função para ajudar a atualizar o histórico do chat
+        const updateHistory = (text) => {
+            setCapHistory(prev => [...prev.filter(msg => msg.text !== "Analisando . . ."), {role: "model", text}]);
+        }
+
+        // formatar historico do chat para req da API
+        history = history.map(({ role, text }) => ({ role, parts: [{ text }] }));
+
+        const requestOptions = {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ contents: history })
+        }
+
+        try {
+            // chamada da API para obter a resposta do bot
+            const response = await fetch(import.meta.env.VITE_API_URL, requestOptions);
+            const data = await response.json();
+            if (!response.ok) throw new Error(data.error.message || "vixe...algo deu errado!")
+            
+            // Limpar e atualizar historico do chat
+            const apiResponseText = data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g,"$1").trim();
+
+            updateHistory(apiResponseText);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles["CapBot-popup"]}>
@@ -30,20 +64,22 @@ function CapBot() {
                             alt="CapBot assistente virtual"
                         />
                         <p className={styles["message-text"]}>
-                            Olá, Embarcante! 🚀 <br/>
-                            Eu me chamo CapBot, sim uma capivara assistente, 
-                            Como posso te ajudar hoje?
+                            Olá, Embarcante! 🚀
+                            <br />
+                            Sou a CapBot, sua mascote virtual.
                         </p>
                     </div>
-                    <div className={styles["mensage-user-message"]}>
-                        <p className={styles["message-text"]}>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        </p>
-                    </div>
+
+                    {/* Render the chat */}
+                    {capHistory.map((chat, index) => (
+                        <CapMessage key={index} chat={chat} />
+                    ))}
+
                 </div>
+
                 {/* Chatbot Footer */}
                 <div className={styles["chat-footer"]}>
-                    <CapForm/>
+                    <CapForm capHistory={capHistory} setCapHistory={setCapHistory} generateBotResponse={generateBotResponse} />
                 </div>
             </div>
         </div>

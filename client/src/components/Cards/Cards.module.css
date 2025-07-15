@@ -101,13 +101,14 @@
 @media (max-width: 768px) {
     .card,
     .cardHour,
-    .cardFreq {
-        width: 350px;
+    .cardFreq,
+    .cardGraphic,
+    .cardInfor {
+        width: 335px;
     }
 
     .cardGraphic,
     .cardInfor {
-        width: 350px;
         height: 325px;
     }
 }

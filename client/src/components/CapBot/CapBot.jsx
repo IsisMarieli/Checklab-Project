@@ -1,18 +1,22 @@
-import styles from './CapBot.module.css'
+import styles from './CapBot.module.css';
 import capBot from '../../assets/CapBot.svg';
 import Cap from '../../assets/Cap.svg';
+import embarque from '../../assets/LOGO - EMBARQUEDIGITAL.svg';
 import CapForm from './CapForm';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import CapMessage from './CapMessage';
 
 
 function CapBot() {
     const [capHistory, setCapHistory] = useState([]);
+    const [showCapBot, setShowCapBot] = useState(false);
+    const chatBodyRef = useRef();
 
     const generateBotResponse = async (history) => {
         // função para ajudar a atualizar o histórico do chat
         const updateHistory = (text) => {
-            setCapHistory(prev => [...prev.filter(msg => msg.text !== "Analisando . . ."), {role: "model", text}]);
+            setCapHistory(prev => [...prev.filter(msg => msg.text !== "Analisando . . ."), 
+                { role: "model", text }]);
         }
 
         // formatar historico do chat para req da API
@@ -29,9 +33,9 @@ function CapBot() {
             const response = await fetch(import.meta.env.VITE_API_URL, requestOptions);
             const data = await response.json();
             if (!response.ok) throw new Error(data.error.message || "vixe...algo deu errado!")
-            
+
             // Limpar e atualizar historico do chat
-            const apiResponseText = data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g,"$1").trim();
+            const apiResponseText = data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, "$1").trim();
 
             updateHistory(apiResponseText);
         } catch (error) {
@@ -39,10 +43,31 @@ function CapBot() {
         }
     }
 
-    return (
-        <div className={styles.container}>
-            <div className={styles["CapBot-popup"]}>
+    useEffect(() => {
+        // auto-scroll no chat quando a CapBot mandar msg
+        chatBodyRef.current.scrollTo({
+            top: chatBodyRef.current.scrollHeight,
+            behavior: "smooth"
+        });
 
+    }, [capHistory])
+
+    return (
+        <div className={`${styles.container} ${showCapBot ? 'show-capbot' : ''}`}>
+            <button onClick={() => setShowCapBot(prev => !prev)} className={styles["capbot-toggler"]}>
+                {!showCapBot ? (
+                    <img
+                        className={styles["CapBot-chat"]}
+                        src={capBot}
+                        alt="CapBot assistente virtual"
+                    />
+                ) : (
+                    <span className="material-symbols-rounded">close</span>
+                )}
+            </button>
+
+
+            <div className={styles["CapBot-popup"]}>
                 {/* ChatBot Header */}
                 <div className={styles["chat-header"]}>
                     <div className={styles["header-info"]}>
@@ -52,11 +77,11 @@ function CapBot() {
                             alt="CapBot assistente virtual"
                         />
                     </div>
-                    <button className="material-symbols-rounded">keyboard_arrow_down</button>
+                    <img src={embarque} alt="logo embarque digital" />
                 </div>
 
                 {/* ChatBot Body */}
-                <div className={styles["chat-body"]}>
+                <div ref={chatBodyRef} className={styles["chat-body"]}>
                     <div className={styles["mensage-bot-message"]}>
                         <img
                             className={styles["CapBot-chat"]}

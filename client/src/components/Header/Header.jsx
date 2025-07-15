@@ -5,7 +5,7 @@ import LogoPorto from '../../assets/LOGO - PORTODIGITAL.svg';
 function Header() {
     return (
         <main className={styles.container}>
-            <img className={styles.LogoPorto} src={LogoPorto} alt="Logo Porto Digital" title='Porto Digital' />
+            <a href="https://www.portodigital.org/" target="_blank" rel="noopener noreferrer"><img className={styles.LogoPorto} src={LogoPorto} alt="Logo Porto Digital" title='Porto Digital' /></a>
             <p>CheckLab</p>
             <img className={styles.LogoEmbarque} src={LogoEmbarque} alt="Logo Embarque Digital" title='Embarque Digital' />
         </main>

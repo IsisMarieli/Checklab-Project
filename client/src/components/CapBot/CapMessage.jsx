@@ -4,7 +4,7 @@ import styles from "./CapBot.module.css";
 
 function CapMessage({ chat }) {
     return (
-        <div className={`${styles[chat.role === "model" ? "mensage-bot-message" : "mensage-user-message"]}`}>
+        <div className={`${styles[chat.role === "model" ? "mensage-bot-message" : "mensage-user-message"]} ${chat.isError ? "error" : ""}`}>
             {chat.role === "model" && <img
                 className={styles["CapBot-chat"]}
                 src={Cap}

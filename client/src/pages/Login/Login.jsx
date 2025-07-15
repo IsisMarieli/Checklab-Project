@@ -14,7 +14,7 @@ function Login() {
   return (
     <main className={styles.container}>
       <img className={styles.LogoEmbarque} src={LogoEmbarque} alt="Logo Embarque Digital" title='Embarque Digital'/>
-      <img className={styles.LogoPorto} src={LogoPorto} alt="Logo Porto Digital" title='Porto Digital' />
+      <a href="https://www.portodigital.org/" target="_blank" rel="noopener noreferrer"><img className={styles.LogoPorto} src={LogoPorto} alt="Logo Porto Digital" title='Porto Digital' /></a>
       <p>Entre no CheckLab</p>
       <input type="text" placeholder='Digite seu CPF'/>
       <button className={styles.btnLogin} onClick={handleLogin}>Entrar</button>

@@ -54,22 +54,6 @@ CapBot é a assistente virtual do CheckLab, com uma interface amigável e respos
 
 - [Link do Deploy](https://vercel.com/)
 
-### 💻 Rodando localmente
-
-Para executar o projeto localmente:
-
-```bash
-# Clone o repositório
-git clone https://github.com/IsisMarieli/Checklab-Project.git
-
-cd checklab
-
-# Instale as dependências
-npm install
-
-# Inicie o servidor de desenvolvimento
-npm run dev
-```
 ---
 
 > Feito com 💖 pela embarcante

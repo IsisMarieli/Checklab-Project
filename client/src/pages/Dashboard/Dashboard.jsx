@@ -9,7 +9,7 @@ function Dashboard() {
   const navigate = useNavigate();
 
   function handleLogout() {
-    navigate('/');
+    navigate('/login');
   }
 
   return (

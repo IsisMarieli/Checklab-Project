@@ -5,7 +5,7 @@ import embarque from '../../assets/LOGO - EMBARQUEDIGITAL.svg';
 import CapForm from './CapForm';
 import { useEffect, useRef, useState } from 'react';
 import CapMessage from './CapMessage';
-import { companyInfo } from "../../companyInfo.js";
+import { companyInfo } from "./companyInfo.js";
 
 
 function CapBot() {
@@ -42,7 +42,7 @@ function CapBot() {
             if (!response.ok) throw new Error(data.error.message || "vixe...algo deu errado!")
 
             // Limpar e atualizar historico do chat
-            const apiResponseText = data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, "$1").trim();
+            const apiResponseText = data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\//g, "$1").trim();
 
             updateHistory(apiResponseText);
         } catch (error) {

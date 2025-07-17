@@ -7,7 +7,7 @@ function App() {
     <BrowserRouter basename="/Checklab-Project">
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );

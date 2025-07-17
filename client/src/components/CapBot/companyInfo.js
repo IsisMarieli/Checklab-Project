@@ -55,7 +55,7 @@ REGRAS DO LABORATÓRIO:
 PREMIAÇÕES:
 - Meta de Frequência: 70%
   - Descrição: Ao atingir 70% de frequência acumulados nos últimos 6 mês, você pode resgatar um brinde exclusivo no laboratório.
-  - Como Resgatar: Clique no botão 'Meus Brindes!', copie o código ou tire um print e apresente na recepção do lab para resgatar seu brinde.
+  - Como Resgatar: Clique no botão 'Resgatar Brinde!', copie o código ou tire um print e apresente na recepção do lab para resgatar seu brinde.
 - Sobre os brindes: 
  - É surpresa visse!
 

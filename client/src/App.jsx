@@ -5,10 +5,10 @@ import Dashboard from "./pages/Dashboard/Dashboard"
 function App() {
 
   return (
-    <BrowserRouter basename="/Checklab-Project">
+    <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/dashboard" element={<Dashboard/>} />
+        <Route path="/Checklab-Project" element={<Login/>}/>
+        <Route path="/Checklab-Project" element={<Dashboard/>} />
       </Routes>
     </BrowserRouter>
   )

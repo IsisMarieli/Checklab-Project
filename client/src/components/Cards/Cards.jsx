@@ -82,7 +82,7 @@ function Cards() {
                         </h4>
                     </div>
                     <button type="button" className={styles.buttonGift} onClick={mostrarBrinde}>
-                        Meus Brindes! 🎁
+                        Resgatar Brinde! 🎁
                     </button>
                 </div>
             </div>

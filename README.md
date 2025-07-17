@@ -52,7 +52,7 @@ CapBot é a assistente virtual do CheckLab, com uma interface amigável e respos
 
 ## 🚀 Deploy
 
-- [Link do Deploy](https://vercel.com/)
+- [Link do Deploy](https://isismarieli.github.io/Checklab-Project/)
 
 ---
 
